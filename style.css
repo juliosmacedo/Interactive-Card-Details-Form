@@ -52,7 +52,7 @@ body {
     white-space: nowrap;
 }
 
-#holdername {
+#holdernameoncard {
     z-index: 2;
     position: absolute;
     color: #DCDDE2;
@@ -65,7 +65,7 @@ body {
     white-space: nowrap;
 }
 
-#date {
+#dateoncard {
     z-index: 2;
     position: absolute;
     color: #DCDDE2;
@@ -78,7 +78,7 @@ body {
     white-space: nowrap;
 }
 
-#cvc {
+#cvconcard {
     z-index: 2;
     position: absolute;
     color: white;
@@ -138,6 +138,7 @@ label {
 }
 
 input {
+    font-family: 'Space Grotesk';
     margin-top: 3px;
     padding: 15px;
     font-size: 16px;
@@ -157,4 +158,60 @@ input {
     font-family: 'Space Grotesk';
     font-size: 1rem;
     letter-spacing: 0.1rem;
+    margin-top: 1vh;
 }
+
+.complete{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 37vh;
+    right: 17vh;
+}
+
+#continue {
+    display: flex;
+    text-align: center;
+    padding: 2vh 7vh;
+    width: 100%;
+}
+
+h6{
+    margin: 0;
+    margin-bottom: 0.5vh;
+    color: rgb(211, 97, 97);
+}
+
+#cvcerrortext, #nameerrortext, #dateerrortext, #carderrortext {
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 450px) {
+
+    body{
+        background-image: url(./images/bg-main-mobile.png);
+    }
+
+    .cards{
+    transform: scale(0.6);
+    position: absolute;
+    left: -7vh;
+    top: 6vh;
+    }
+
+    #cardimgback{
+        left: 22vh;
+        top: 31vh;
+    }
+
+    .form-container{
+        right: auto;
+        top: 40vh;
+    }
+}
+

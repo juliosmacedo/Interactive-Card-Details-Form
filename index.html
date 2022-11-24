@@ -25,65 +25,54 @@
       <div class="cardfrontdiv">
       <img src="./images/card-logo.svg" id="cardlogo" alt="Card Logo">
       <h1 id="cardnumber1">0000 0000 0000 0000</h1>
-      <h2 id="holdername">Jane Appleseed</h2>
-      <h2 id="date">00/00</h2>
+      <h2 id="holdernameoncard">Jane Appleseed</h2>
+      <h2 id="dateoncard">00/00</h2>
     <img src="./images/bg-card-front.png" id="cardimgfront" class="card" alt="Card Front">
   </div>
 
   <div class="cardbackdiv">
-    <h2 id="cvc">123</h2>
+    <h2 id="cvconcard">000</h2>
     <img src="./images/bg-card-back.png" id="cardimgback" class="card" alt="Card Back">
     </div>
   </div>
 
-  <div class="form-container">
+  <div class="form-container" id="form-container">
     <div class="field-container">
         <label for="name">CARDHOLDER NAME</label>
-        <input id="name" maxlength="20" type="text">
+        <input id="holdername" placeholder="Jane Appleseed" maxlength="20" type="text">
+        <h6 id="nameerrortext">Missing field.</h6>
     </div>
     <div class="field-container">
         <label for="cardnumber">CARD NUMBER</label>
-        <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
+        <input id="cardnumber" type="number" placeholder="1234 5678 9012 3456" inputmode="numeric" oninput="javascript: if (this.value.length > this.maxLength)
+        this.value = this.value.slice(0, this.maxLength);"
+        type = "number"
+        maxlength = "16">
+        <h6 id="carderrortext">Wrong card number. Missing digits.</h6>
     </div>
     <div class="field-container">
         <label for="expirationdate">EXP. DATE (MM/YY)</label>
-        <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
+        <input id="expirationdate" maxlength='5' placeholder="MM/YY" type="text" onkeyup="formatString(event);" inputmode="numeric">
+        <h6 id="dateerrortext">Wrong date input.</h6>
     </div>
     <div class="field-container">
         <label for="securitycode">CVC</label>
-        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+        <input id="securitycode" maxlength="3" placeholder="000" type="text">
+        <h6 id="cvcerrortext">Wrong security code.</h6>
     </div>
-    <div><button class="confirm">Confirm</button></div>
-    </div>
-  <!-- <form action="submit">
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <div><button class="confirm" id="confirm">Confirm</button></div>
+  </div>
 
-  000
+  <div class="complete" id="complete">
+    <img src="./images/icon-complete.svg" alt="Icon complete">
+    <h4>THANK YOU!</h4>
+    <h3>We've added your card details</h3>
+    <div><button class="confirm" id="continue">Continue</button></div>
+  </div>
 
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-</form> -->
 </div>
-  <!-- Completed state start
-
-  Thank you!
-  We've added your card details
-  Continue
-   -->
 </main>
+
 </body>
+<script src="script.js"></script>
 </html>
