@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@100;200;500&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  
+</head>
+<body>
+<main>
+
+
+  <div class="hero">
+    <div class="cards">
+      <div class="cardfrontdiv">
+      <img src="./images/card-logo.svg" id="cardlogo" alt="Card Logo">
+      <h1 id="cardnumber1">0000 0000 0000 0000</h1>
+      <h2 id="holdername">Jane Appleseed</h2>
+      <h2 id="date">00/00</h2>
+    <img src="./images/bg-card-front.png" id="cardimgfront" class="card" alt="Card Front">
+  </div>
+
+  <div class="cardbackdiv">
+    <h2 id="cvc">123</h2>
+    <img src="./images/bg-card-back.png" id="cardimgback" class="card" alt="Card Back">
+    </div>
+  </div>
+
+  <div class="form-container">
+    <div class="field-container">
+        <label for="name">CARDHOLDER NAME</label>
+        <input id="name" maxlength="20" type="text">
+    </div>
+    <div class="field-container">
+        <label for="cardnumber">CARD NUMBER</label>
+        <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
+    </div>
+    <div class="field-container">
+        <label for="expirationdate">EXP. DATE (MM/YY)</label>
+        <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
+    </div>
+    <div class="field-container">
+        <label for="securitycode">CVC</label>
+        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+    </div>
+    <div><button class="confirm">Confirm</button></div>
+    </div>
+  <!-- <form action="submit">
+  0000 0000 0000 0000
+  Jane Appleseed
+  00/00
+
+  000
+
+  Cardholder Name
+  e.g. Jane Appleseed
+
+  Card Number
+  e.g. 1234 5678 9123 0000
+
+  Exp. Date (MM/YY)
+  MM
+  YY
+
+  CVC
+  e.g. 123
+
+  Confirm
+</form> -->
+</div>
+  <!-- Completed state start
+
+  Thank you!
+  We've added your card details
+  Continue
+   -->
+</main>
+</body>
+</html>
